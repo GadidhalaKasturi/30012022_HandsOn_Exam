@@ -55,11 +55,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Author.cs">
+      <DependentUpon>BooksRecommendation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Book.cs">
+      <DependentUpon>BooksRecommendation.tt</DependentUpon>
+    </Compile>
     <Compile Include="BookRecomendationDAL.cs" />
     <Compile Include="BooksRecommendation.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BooksRecommendation.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BooksRecommendation.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BooksRecommendation.tt</DependentUpon>
     </Compile>
     <Compile Include="BooksRecommendation.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -67,6 +78,9 @@
       <DependentUpon>BooksRecommendation.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Review.cs">
+      <DependentUpon>BooksRecommendation.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BookRecomendationDTO\BookRecomendationDTO.csproj">
@@ -92,6 +106,12 @@
     <Content Include="BooksRecommendation.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BooksRecommendation.Context.cs</LastGenOutput>
+      <DependentUpon>BooksRecommendation.edmx</DependentUpon>
+    </Content>
+    <Content Include="BooksRecommendation.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BooksRecommendation.edmx</DependentUpon>
+      <LastGenOutput>BooksRecommendation.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
